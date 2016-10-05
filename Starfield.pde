@@ -1,14 +1,23 @@
 //your code here
+NormalParticle[] test;
 void setup()
 {
+	size(400, 400);
+	test = new NormalParticle[200];
+	for(int i = 0; i < test.length; i++){
+		test[i] = new NormalParticle();
+	}
 	//your code here
+
 }
 void draw()
 {
 	//your code here
-	int Rawr = new NormalParticle();
-	Rawr.show();
-	Rawr.move();
+	background(200);
+	for(int i = 0; i < test.length; i++){
+		test[i].show();
+		test[i].move();
+	}
 }
 class NormalParticle
 {
@@ -18,14 +27,17 @@ class NormalParticle
 	NormalParticle(){
 		myX = 200;
 		myY = 200;
-		angle = (Math.random()*360)-1;
+		angle = (Math.random()*2)*PI;
+		speed = 1;
 	}
 	void move(){
-		myX = myX + cos(angle)*speed;
+		myX = myX + Math.cos(angle)*speed;
+		myY = myY + Math.sin(angle)*speed;
 	}
 	void show(){
-		fill(colour, colour, colour);
-		ellipse(myX, myY, 20, 50);
+		fill(colour, colour, colour, 5);
+
+		ellipse((int)myX, (int)myY, 20, 20);
 
 	}
 }
