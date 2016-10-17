@@ -65,13 +65,13 @@ class NormalParticle implements Particle{
 		myY = 200;
 		angle = (Math.random()*2)*PI;
 		speed = (Math.random()*5) + 2;
-		rojo = (int)(Math.random()*70)+ 180;
-		verde = (int)(Math.random()*70)+ 180;
+		//rojo = (int)(Math.random()*70)+ 180;
+		//verde = (int)(Math.random()*70)+ 180;
 		//rojo = (int)(Math.random()*255);
 		//verde = (int)(Math.random()*255);
 		//azul = (int)(Math.random()*255);
 		//stroker = (int)(Math.random()*70);
-		sizze = (int)(Math.random()*10);
+		//sizze = (int)(Math.random()*10);
 	}
 	public void move(){
 		myX = myX + Math.cos(angle)*speed;
@@ -86,9 +86,9 @@ class NormalParticle implements Particle{
 		//}
 	}
 	public void show(){
-		fill(rojo, verde, 255, 200);
-		stroke(rojo, verde, 255);
-		ellipse((int)myX, (int)myY, sizze, sizze);
+		fill(255, 0, 255, 100);
+		stroke(255, 255, 0);
+		ellipse((int)myX, (int)myY, 5, 5);
 
 	}
 }
@@ -108,9 +108,9 @@ class OddballParticle implements Particle//uses an interface
 		myY = 200;
 		angle = (Math.random()*2)*PI;
 		speed = (Math.random()*7);
-		rojo = (int)(Math.random()*255);
-		verde = (int)(Math.random()*255);
-		azul = (int)(Math.random()*255);
+		//rojo = (int)(Math.random()*255);
+		//verde = (int)(Math.random()*255);
+		//azul = (int)(Math.random()*255);
 		sizze = (int)(Math.random()*10);
 
 	}
@@ -125,7 +125,7 @@ class OddballParticle implements Particle//uses an interface
 	}
 	public void show(){
 		noStroke();
-		fill(rojo, verde, azul, 200);
+		fill(0, 255, 0, 150);
 		rect((int)myX, (int)myY, sizze, sizze);
 
 	}
@@ -135,7 +135,7 @@ class JumboParticle extends NormalParticle//uses inheritance
 	//your code here
 	int m_Num;
 	JumboParticle(){
-		speed = Math.random()*6 + 3;
+		speed = Math.random()*3 + 1.5;
 		rojo = (int)(Math.random()*255);
 		verde = (int)(Math.random()*255)- 100;
 		azul = (int)(Math.random()*255)- 275;
@@ -155,7 +155,7 @@ class JumboParticle extends NormalParticle//uses inheritance
 	public void show(){
 		noStroke();
 		fill(255, 0, 0);
-		text( m_Num, (int)myX, (int)myY);
+		text( (int)(Math.random()*10), (int)myX, (int)myY);
 
 	}
 }
